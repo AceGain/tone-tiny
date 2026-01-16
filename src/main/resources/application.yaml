@@ -1,0 +1,9 @@
+server:
+  port: 2025
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: stone
+    version: 0.0.1-SNAPSHOT
