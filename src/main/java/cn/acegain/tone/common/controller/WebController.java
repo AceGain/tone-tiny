@@ -24,7 +24,7 @@ public class WebController<T extends BaseEntity, S extends IService<T>> extends 
 
     public WebController() {
         ResolvableType resolvableType = ResolvableType.forClass(getClass());
-        ResolvableType baseControllerType = resolvableType.as(BaseController.class);
+        ResolvableType baseControllerType = resolvableType.as(WebController.class);
         this.clazz = (Class<T>) baseControllerType.getGeneric(0).resolve();
     }
 

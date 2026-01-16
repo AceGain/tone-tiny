@@ -99,12 +99,14 @@ CREATE TABLE `sys_role_permiss`
     `permiss_id` INTEGER NOT NULL
 );
 
-
-CREATE
-TANLE `sys_cache`(
-    `scope` TEXT,
-    `key` TEXT,
-    `value` TEXT,
-    `expire` INTEGER
-
+-- 缓存表
+CREATE TABLE `sys_cache`
+(
+    `name`      TEXT,
+    `key`       TEXT,
+    `value`     TEXT,
+    `issue_at`  DATETIME,
+    `duration`  INTEGER,
+    `expire_at` DATETIME,
+    PRIMARY KEY (`name`, `key`)
 )
