@@ -82,6 +82,12 @@
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-cache</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-captcha</artifactId>
+        </dependency>
+
     </dependencies>
 
     <dependencyManagement>

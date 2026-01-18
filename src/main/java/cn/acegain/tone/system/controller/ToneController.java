@@ -17,7 +17,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/")
 @RequiredArgsConstructor
-public class StoneController extends BaseController {
+public class ToneController implements BaseController {
 
     @Autowired
     protected Environment environment;

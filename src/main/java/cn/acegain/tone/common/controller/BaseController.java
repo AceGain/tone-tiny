@@ -6,9 +6,9 @@ import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-public abstract class BaseController {
+public interface BaseController {
 
-    protected HttpServletRequest getRequest() {
+    default HttpServletRequest getRequest() {
         RequestAttributes attributes = RequestContextHolder.getRequestAttributes();
         if (attributes == null) {
             throw new NullPointerException("Unable to obtain the servlet request!");
@@ -19,7 +19,7 @@ public abstract class BaseController {
         return servletRequestAttributes.getRequest();
     }
 
-    protected HttpServletResponse getResponse() {
+    default HttpServletResponse getResponse() {
         RequestAttributes attributes = RequestContextHolder.getRequestAttributes();
         if (attributes == null) {
             throw new NullPointerException("Unable to obtain the servlet response!");

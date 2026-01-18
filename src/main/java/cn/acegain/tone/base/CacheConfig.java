@@ -1,6 +1,5 @@
 package cn.acegain.tone.base;
 
-import cn.hutool.cache.CacheUtil;
 import cn.hutool.cache.impl.TimedCache;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.EnableCaching;

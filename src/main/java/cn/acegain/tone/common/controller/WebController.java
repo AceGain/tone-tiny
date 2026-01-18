@@ -15,7 +15,7 @@ import java.util.List;
 
 @Slf4j
 @SuppressWarnings({"SpringJavaInjectionPointsAutowiringInspection", "unchecked"})
-public class WebController<T extends BaseEntity, S extends IService<T>> extends BaseController {
+public abstract class WebController<T extends BaseEntity, S extends IService<T>> implements BaseController {
 
     protected final Class<T> clazz;
 
@@ -29,7 +29,7 @@ public class WebController<T extends BaseEntity, S extends IService<T>> extends 
     }
 
     protected Page<T> buildPage() {
-        HttpServletRequest request = super.getRequest();
+        HttpServletRequest request = this.getRequest();
         int pageNumber = ServletRequestUtils.getIntParameter(request, "pageNo", 1);
         int pageSize = ServletRequestUtils.getIntParameter(request, "pageSize", 10);
         return new Page<>(pageNumber, pageSize);
