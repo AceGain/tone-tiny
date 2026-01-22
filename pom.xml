@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>cn.acegain.tone</groupId>
-    <artifactId>tone-tiny</artifactId>
+    <artifactId>FTone</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <name>tone-tiny</name>
