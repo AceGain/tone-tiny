@@ -39,7 +39,7 @@ mybatis-flex:
       driver-class-name: org.sqlite.JDBC
       url: jdbc:sqlite:db/tone.db
 
-hutool:
+tone:
   captcha:
     type: Circle
     width: 200

@@ -4,7 +4,7 @@ import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @Data
-@ConfigurationProperties("hutool.captcha")
+@ConfigurationProperties("tone.captcha")
 public class CaptchaProperties {
 
     private CaptchaType type;

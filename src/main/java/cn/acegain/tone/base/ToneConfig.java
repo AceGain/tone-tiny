@@ -1,5 +1,9 @@
-package cn.acegain.tone.base.captcha;
+package cn.acegain.tone.base;
 
+import cn.acegain.tone.base.captcha.CaptchaProperties;
+import cn.acegain.tone.base.captcha.CaptchaType;
+import cn.acegain.tone.base.jwt.JwtProperties;
+import cn.acegain.tone.base.jwt.JwtService;
 import cn.hutool.captcha.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -8,8 +12,8 @@ import org.springframework.context.annotation.Configuration;
 
 @Slf4j
 @Configuration(proxyBeanMethods = false)
-@EnableConfigurationProperties(CaptchaProperties.class)
-public class CaptchaConfig {
+@EnableConfigurationProperties({CaptchaProperties.class, JwtProperties.class})
+public class ToneConfig {
 
     @Bean
     public AbstractCaptcha captcha(CaptchaProperties properties) {
@@ -24,6 +28,11 @@ public class CaptchaConfig {
             case Gif -> new GifCaptcha(width, height, length, stain);
             default -> new LineCaptcha(width, height, length, stain);
         };
+    }
+
+    @Bean
+    public JwtService jwtService(JwtProperties properties) {
+        return new JwtService(properties);
     }
 
 }
